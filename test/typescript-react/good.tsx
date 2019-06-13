@@ -1,3 +1,26 @@
-// good 大括号内前后必须没有空格
-let foo: any = <img width={100} />;
-let bar: any = <div style={{ color: 'red' }} />;
+import * as React from 'react';
+
+interface FooProps {
+    bar: string;
+}
+
+interface FooState {
+    baz: number;
+}
+
+class Foo extends React.Component<FooProps, FooState> {
+    public constructor(props) {
+        super(props);
+        console.log(this.props.bar);
+    }
+    public render() {
+        return (
+            <div
+                id="app"
+                className="foo"
+            />
+        );
+    }
+}
+
+console.log(Foo);
